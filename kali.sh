@@ -3778,42 +3778,6 @@ grep -q '^## ssh' "${file}" 2>/dev/null || echo -e '## ssh\nalias ssh-start="sys
 
 
 ##### Custom insert point
-echo -e "\n ${GREEN}[+]${RESET} Installing ${GREEN}emacs${RESET} ~ The ONLY editor"
-apt-get -y -qq install emacs auctex yasnippet|| echo -e ' '${RED}'[!] Issue with apt-get'${RESET} 1>&2
-
-echo -e "\n ${GREEN}[+]${RESET} Setup Extra keysbindings ${GREEN}${RESET}"
-mkdir -p ~/.config/autostart
-
-mkdir -p ~/.config/autostart/
-file=~/.config/autostart/caps.desktop; [ -e "${file}" ] && cp -n $file{,.bkup}
-cat <<EOF > "${file}" || echo -e ' '${RED}'[!] Issue with writing file: ${file}'${RESET} 1>&2
-[Desktop Entry]
-Encoding=UTF-8
-Version=0.9.4
-Type=Application
-Name=Caps rebind
-Comment=Rebind Caps to Ctrl
-Exec=/usr/bin/setxkbmap -option 'ctrl:nocaps'
-OnlyShowIn=XFCE;
-StartupNotify=false
-Terminal=false
-Hidden=false
-EOF
-
-file=~/.config/autostart/compose.desktop; [ -e "${file}" ] && cp -n $file{,.bkup}
-cat <<EOF > "${file}" || echo -e ' '${RED}'[!] Issue with writing file: ${file}'${RESET} 1>&2
-[Desktop Entry]
-Encoding=UTF-8
-Version=0.9.4
-Type=Application
-Name=set compose key
-Comment=
-Exec=setxkbmap -option compose:lwin
-OnlyShowIn=XFCE;
-StartupNotify=false
-Terminal=false
-Hidden=false
-EOF
 
 ##### Clean the system
 echo -e "\n ${GREEN}[+]${RESET} ${GREEN}Cleaning${RESET} the system"
