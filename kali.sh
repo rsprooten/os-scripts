@@ -3777,6 +3777,8 @@ grep -q '^## ssh' "${file}" 2>/dev/null || echo -e '## ssh\nalias ssh-start="sys
 
 
 ##### Custom insert point
+## This repo is now included as a submodule
+
 
 ##### Clean the system
 echo -e "\n ${GREEN}[+]${RESET} ${GREEN}Cleaning${RESET} the system"
