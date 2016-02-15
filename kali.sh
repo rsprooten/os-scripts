@@ -207,11 +207,11 @@ echo -e "\n ${GREEN}[+]${RESET} Enabling default kali ${GREEN}network repositori
 file=/etc/apt/sources.list; [ -e "${file}" ] && cp -n $file{,.bkup}
 ([[ -e "${file}" && "$(tail -c 1 ${file})" != "" ]]) && echo >> "${file}"
 #--- Main
-grep -q 'deb .* sana main non-free contrib' "${file}" 2>/dev/null || echo "deb http://http.kali.org/kali sana main non-free contrib" >> "${file}"
-grep -q 'deb-src .* sana main non-free contrib' "${file}" 2>/dev/null || echo "deb-src http://http.kali.org/kali sana main non-free contrib" >> "${file}"
+#grep -q 'deb .* sana main non-free contrib' "${file}" 2>/dev/null || echo "deb http://http.kali.org/kali sana main non-free contrib" >> "${file}"
+#grep -q 'deb-src .* sana main non-free contrib' "${file}" 2>/dev/null || echo "deb-src http://http.kali.org/kali sana main non-free contrib" >> "${file}"
 #--- Security
-grep -q 'deb .* sana/updates main contrib non-free' "${file}" 2>/dev/null || echo "deb http://security.kali.org/kali-security sana/updates main contrib non-free" >> "${file}"
-grep -q 'deb-src .* sana/updates main contrib non-free' "${file}" 2>/dev/null || echo "deb-src http://security.kali.org/kali-security sana/updates main contrib non-free" >> "${file}"
+#grep -q 'deb .* sana/updates main contrib non-free' "${file}" 2>/dev/null || echo "deb http://security.kali.org/kali-security sana/updates main contrib non-free" >> "${file}"
+#grep -q 'deb-src .* sana/updates main contrib non-free' "${file}" 2>/dev/null || echo "deb-src http://security.kali.org/kali-security sana/updates main contrib non-free" >> "${file}"
 #--- Disable CD repositories
 sed -i '/kali/ s/^\( \|\t\|\)deb cdrom/#deb cdrom/g' "${file}"
 #--- Update
