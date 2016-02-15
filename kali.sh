@@ -1606,8 +1606,8 @@ apt-get -y -qq install conky || echo -e ' '${RED}'[!] Issue with apt-get'${RESET
 file=~/.conkyrc; [ -e "${file}" ] && cp -n $file{,.bkup}
 [ -e "${file}" ] || cat <<EOF > "${file}"
 ## Useful: http://forums.opensuse.org/english/get-technical-help-here/how-faq-forums/unreviewed-how-faq/464737-easy-configuring-conky-conkyconf.html
-background yes
-#background no     # Kali rolling?
+#background yes
+background no     # Kali rolling?
 
 font Monospace:size=8:weight=bold
 use_xft yes
@@ -1618,8 +1618,8 @@ own_window yes
 own_window_type normal
 own_window_transparent yes
 own_window_class conky-semi
-own_window_argb_visual yes   # GNOME & XFCE yes, KDE no
-#own_window_argb_visual no    # Kali rolling?
+#own_window_argb_visual yes   # GNOME & XFCE yes, KDE no
+own_window_argb_visual no    # Kali rolling?
 own_window_colour brown
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
