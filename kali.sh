@@ -266,9 +266,9 @@ elif (dmidecode | grep -iq vmware); then
     apt-get -y -qq install open-vm-tools open-vm-tools-desktop open-vm-tools-dkms || echo -e ' '${RED}'[!] Issue when git cloning'${RESET} 1>&2
     apt-get -y -qq install make || echo -e ' '${RED}'[!] Issue with apt-get'${RESET}    # nags afterwards
   fi
-# Commentend out -- they probably need updating anyway
-# elif [ -e "/etc/init.d/vboxadd" ]; then
-#   echo -e "\n "${RED}'[!]'${RESET}" VirtualBox Guest Additions is ${RED}already installed${RESET}. Skipping..." 1>&2
+
+elif [ -e "/etc/init.d/vboxadd" ]; then
+  echo -e "\n "${RED}'[!]'${RESET}" VirtualBox Guest Additions is ${RED}already installed${RESET}. Skipping..." 1>&2
 elif (dmidecode | grep -iq virtualbox); then
   ##### (Optional) Installing Virtualbox Guest Additions.   Note: Need VirtualBox 4.2.xx+ (http://docs.kali.org/general-use/kali-linux-virtual-box-guest)
   echo -e "\n ${GREEN}[+]${RESET} (Optional) Installing ${GREEN}VirtualBox Guest Additions${RESET}"
